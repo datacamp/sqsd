@@ -1,6 +1,8 @@
-FROM node:4
+FROM node:9
 
-MAINTAINER Aleksandr Popov  <mogadanez@gmail.com>
+RUN curl -o /tmp/aws-env-linux-amd64 -L https://github.com/datacamp/aws-env/releases/download/v0.1-session-fix/aws-env-linux-amd64 && \
+  chmod +x /tmp/aws-env-linux-amd64 && \
+  mv /tmp/aws-env-linux-amd64 /bin/aws-env
 
 # Create sqsd directory
 WORKDIR /
