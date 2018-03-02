@@ -14,6 +14,10 @@ jobs:
           name: Build application docker image
           command: |
             docker build -t ${STAGING_ECR_URL}/${SERVICE}:${CIRCLE_SHA1} .
+            docker tag ${STAGING_ECR_URL}/${SERVICE}:${CIRCLE_SHA1} ${STAGING_ECR_URL}/${SERVICE}:latest
+            docker tag ${STAGING_ECR_URL}/${SERVICE}:${CIRCLE_SHA1} ${PROD_ECR_URL}/${SERVICE}:latest
+            docker tag ${STAGING_ECR_URL}/${SERVICE}:${CIRCLE_SHA1} ${PROD_ECR_URL}/${SERVICE}:latest
+
       - run:
           name: Push image
           command: |
