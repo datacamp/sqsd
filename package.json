@@ -42,6 +42,6 @@
     "dotenv": "^2.0.0",
     "forever-monitor": "^1.5.2",
     "lodash": "^3.9.3",
-    "request": "^2.67.0"
+    "request": "^2.83.0"
   }
 }
