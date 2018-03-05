@@ -99,6 +99,7 @@ new sqsd(mergedParams).start()
         process.exit(0);
     })
     .catch( err=> {
+        console.error(err);
         logger.error( {err:err}, "Unexpected error")
         process.exit(1);
     })
